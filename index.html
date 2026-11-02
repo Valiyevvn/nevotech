@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NevoTech — Biznes üçün rəqəmsal həllər</title>
+  <meta name="description" content="NevoTech sahibkarlar üçün veb saytlar, idarəetmə sistemləri, ERP, hesabat, analiz, anbar, satış və AI chatbot sistemləri yaradır.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/logo-mark.png">
+  <meta property="og:image" content="assets/logo-full.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg>NevoTech</a>
+
+      <nav class="nav" id="nav">
+        <a href="#home" data-i18n="nav.home">Ana səhifə</a>
+        <a href="#services" data-i18n="nav.services">Xidmətlər</a>
+        <a href="#about" data-i18n="nav.about">Haqqımızda</a>
+        <a href="#process" data-i18n="nav.process">İş prosesi</a>
+        <a href="#portfolio" data-i18n="nav.portfolio">Layihələr</a>
+        <a href="#faq" data-i18n="nav.faq">Suallar</a>
+        <a href="#contact" data-i18n="nav.contact">Əlaqə</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang" id="lang">
+          <button data-lang="az" class="active">AZ</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="ru">RU</button>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__glow"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge" data-i18n="hero.badge">Xüsusi təklif</span>
+          <h1><span data-i18n="hero.title1">Biznesiniz üçün ağıllı sistemlər —</span> <em data-i18n="hero.title2">almadan pulsuz sınayın</em></h1>
+          <p data-i18n="hero.text">Veb saytlardan ERP sistemlərinə, anbar idarəetməsindən AI chatbotlara qədər — sahibkarlar üçün işi asanlaşdıran, vaxta və pula qənaət edən proqram həlləri yaradırıq.</p>
+          <div class="hero__buttons">
+            <a href="#contact" class="btn btn--primary"><span data-i18n="hero.cta1">Pulsuz demo üçün yazın</span> →</a>
+            <a href="#services" class="btn btn--ghost" data-i18n="hero.cta2">Xidmətlərə bax</a>
+          </div>
+          <ul class="pills">
+            <li data-i18n="pills.p1">Ödənişsiz</li>
+            <li data-i18n="pills.p2">Öhdəliksiz</li>
+            <li data-i18n="pills.p3">Rahat vaxtda</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="report">
+            <div class="report__head">
+              <div>
+                <h3 data-i18n="hero.r.title">Biznes hesabatı</h3>
+                <small data-i18n="hero.r.month">Oktyabr ayı</small>
+              </div>
+              <span class="report__status" data-i18n="hero.r.auto">Avtomatik hazırlandı</span>
+            </div>
+            <div class="report__stats">
+              <div class="stat"><small data-i18n="hero.r.income">Gəlir</small><b>24 800</b><span>AZN +12%</span></div>
+              <div class="stat"><small data-i18n="hero.r.expense">Xərc</small><b>15 300</b><span>AZN −4%</span></div>
+              <div class="stat stat--accent"><small data-i18n="hero.r.profit">Mənfəət</small><b>9 500</b><span>AZN +22%</span></div>
+            </div>
+            <svg class="report__chart" viewBox="0 0 400 130" preserveAspectRatio="none" aria-hidden="true">
+              <path class="area" d="M0 110 L80 92 L160 102 L240 66 L320 52 L400 8 V130 H0Z"/>
+              <path class="line" d="M0 110 L80 92 L160 102 L240 66 L320 52 L400 8"/>
+            </svg>
+            <div class="report__months">
+              <span data-i18n="hero.m1">May</span><span data-i18n="hero.m2">İyun</span><span data-i18n="hero.m3">İyul</span>
+              <span data-i18n="hero.m4">Avq</span><span data-i18n="hero.m5">Sen</span><span data-i18n="hero.m6">Okt</span>
+            </div>
+          </div>
+          <div class="chat-bubble">
+            <div class="msg msg--in" data-i18n="hero.c1">Salam! Sifarişim haradadır?</div>
+            <div class="msg msg--out" data-i18n="hero.c2">🤖 Sifarişiniz yoldadır, sabah çatacaq.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="services.eyebrow">Xidmətlər</span>
+          <h2 data-i18n="services.title">Biznesiniz üçün hər şey bir yerdə</h2>
+          <p data-i18n="services.text">Hər xidmət ayrıca sifariş oluna bilər və ya bir-biri ilə inteqrasiya olunmuş vahid sistem kimi qurula bilər.</p>
+        </div>
+
+        <div class="services">
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+            <h3 data-i18n="services.s1.t">Veb saytlar</h3>
+            <p data-i18n="services.s1.d">Tanıtım, korporativ və onlayn mağaza — istənilən formada, mobil uyğun, sürətli saytlar.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
+            <h3 data-i18n="services.s2.t">İdarəetmə sistemləri</h3>
+            <p data-i18n="services.s2.d">İşçilər, tapşırıqlar, müştərilər və proseslər üçün sizə özəl idarəetmə panelləri.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3 data-i18n="services.s3.t">ERP sistemləri</h3>
+            <p data-i18n="services.s3.d">Maliyyə, kadr, satış və anbarı vahid sistemdə birləşdirən tam ERP həlləri.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h8"/></svg></div>
+            <h3 data-i18n="services.s4.t">Hesabatlar</h3>
+            <p data-i18n="services.s4.d">Gündəlik, aylıq və illik hesabatlar avtomatik hazırlanır — Excel-də vaxt itirmədən.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></div>
+            <h3 data-i18n="services.s5.t">Analiz və dashboardlar</h3>
+            <p data-i18n="services.s5.d">Biznes göstəricilərinizi real vaxtda izləyin və rəqəmlərə əsaslanan qərarlar verin.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 9 12 4l9 5v11H3z"/><path d="M8 20v-6h8v6"/></svg></div>
+            <h3 data-i18n="services.s6.t">Anbar idarəetməsi</h3>
+            <p data-i18n="services.s6.d">Mal qalıqları, giriş-çıxış, inventarizasiya və barkod sistemi bir yerdə.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12L22 7H6"/></svg></div>
+            <h3 data-i18n="services.s7.t">Satış sistemləri</h3>
+            <p data-i18n="services.s7.d">Kassa (POS), sifariş, müştəri bazası və satış planlaması üçün rahat sistemlər.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg></div>
+            <h3 data-i18n="services.s8.t">AI chatbot sistemləri</h3>
+            <p data-i18n="services.s8.d">WhatsApp, Instagram və saytda 7/24 müştərilərə cavab verən süni intellekt botları.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section section--alt" id="about">
+      <div class="container about">
+        <div class="about__text">
+          <span class="eyebrow" data-i18n="about.eyebrow">Haqqımızda</span>
+          <h2 data-i18n="about.title">Texnologiyanı sahibkarın dilində danışdırırıq</h2>
+          <p data-i18n="about.text">NevoTech kiçik və orta biznes üçün proqram təminatı hazırlayan komandadır. Məqsədimiz sadədir: gündəlik işləri avtomatlaşdırmaq, səhvləri azaltmaq və sahibkara biznesini böyütməyə vaxt qazandırmaq.</p>
+          <ul class="checks">
+            <li data-i18n="about.p1">Biznesinizə uyğun fərdi həllər</li>
+            <li data-i18n="about.p2">Sadə və anlaşılan interfeys</li>
+            <li data-i18n="about.p3">Təhvildən sonra texniki dəstək</li>
+            <li data-i18n="about.p4">Sərfəli və şəffaf qiymətlər</li>
+          </ul>
+        </div>
+        <div class="why">
+          <div class="why__item">
+            <b>01</b>
+            <h4 data-i18n="why.w1.t">Fərdi yanaşma</h4>
+            <p data-i18n="why.w1.d">Hazır şablon yox — sizin iş prosesinizə uyğun sistem.</p>
+          </div>
+          <div class="why__item">
+            <b>02</b>
+            <h4 data-i18n="why.w2.t">Sürətli təhvil</h4>
+            <p data-i18n="why.w2.d">Razılaşdırılmış müddətdə, mərhələ-mərhələ nəticə.</p>
+          </div>
+          <div class="why__item">
+            <b>03</b>
+            <h4 data-i18n="why.w3.t">Təhlükəsizlik</h4>
+            <p data-i18n="why.w3.d">Məlumatlarınız qorunur, ehtiyat nüsxələr saxlanılır.</p>
+          </div>
+          <div class="why__item">
+            <b>04</b>
+            <h4 data-i18n="why.w4.t">Daimi dəstək</h4>
+            <p data-i18n="why.w4.d">Sualınız olduqda həmişə əlaqədəyik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="process.eyebrow">İş prosesi</span>
+          <h2 data-i18n="process.title">Necə işləyirik?</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><span>1</span><h4 data-i18n="process.s1.t">Tanışlıq</h4><p data-i18n="process.s1.d">Biznesinizi və ehtiyaclarınızı dinləyirik.</p></div>
+          <div class="step"><span>2</span><h4 data-i18n="process.s2.t">Planlama</h4><p data-i18n="process.s2.d">Həll yolu, müddət və qiyməti razılaşdırırıq.</p></div>
+          <div class="step"><span>3</span><h4 data-i18n="process.s3.t">Hazırlama</h4><p data-i18n="process.s3.d">Sistemi qurur, hər mərhələdə sizə göstəririk.</p></div>
+          <div class="step"><span>4</span><h4 data-i18n="process.s4.t">Təhvil və dəstək</h4><p data-i18n="process.s4.d">İstifadəni öyrədir, sonra da yanınızda oluruq.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="section section--alt" id="portfolio">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="portfolio.eyebrow">Layihələr</span>
+          <h2 data-i18n="portfolio.title">Gördüyümüz işlərdən nümunələr</h2>
+        </div>
+        <!-- TODO: real layihələrin şəkil və adlarını bura əlavə edin -->
+        <div class="projects">
+          <div class="project"><div class="project__img p1"></div><span data-i18n="services.s1.t">Veb saytlar</span><h4 data-i18n="portfolio.p1">Korporativ sayt</h4></div>
+          <div class="project"><div class="project__img p2"></div><span data-i18n="services.s3.t">ERP sistemləri</span><h4 data-i18n="portfolio.p2">Ticarət şirkəti üçün ERP</h4></div>
+          <div class="project"><div class="project__img p3"></div><span data-i18n="services.s8.t">AI chatbot sistemləri</span><h4 data-i18n="portfolio.p3">WhatsApp satış botu</h4></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head">
+          <span class="eyebrow" data-i18n="faq.eyebrow">Suallar</span>
+          <h2 data-i18n="faq.title">Tez-tez verilən suallar</h2>
+        </div>
+        <div class="faq">
+          <details><summary data-i18n="faq.q1">Layihə nə qədər vaxt aparır?</summary><p data-i18n="faq.a1">Sadə tanıtım saytı 1–2 həftə, ERP və idarəetmə sistemləri isə həcmindən asılı olaraq 1–3 ay çəkir.</p></details>
+          <details><summary data-i18n="faq.q2">Qiymət necə müəyyən olunur?</summary><p data-i18n="faq.a2">Qiymət layihənin həcmindən və funksiyalardan asılıdır. İlk görüşdən sonra dəqiq təklif təqdim edirik.</p></details>
+          <details><summary data-i18n="faq.q3">Xidmətləri ayrıca sifariş etmək olar?</summary><p data-i18n="faq.a3">Bəli. Hər xidmət müstəqildir, amma istəsəniz hamısını vahid sistemdə birləşdirə bilərik.</p></details>
+          <details><summary data-i18n="faq.q4">Təhvildən sonra dəstək olurmu?</summary><p data-i18n="faq.a4">Bəli, təhvildən sonra texniki dəstək və lazım olduqda yeniləmələr təqdim edirik.</p></details>
+          <details><summary data-i18n="faq.q5">Mövcud sistemimizə qoşmaq olar?</summary><p data-i18n="faq.a5">Əksər hallarda bəli — mövcud proqramlarınızla inteqrasiya imkanlarını birlikdə araşdırırıq.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FREE DEMO CTA ===== -->
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 data-i18n="cta.title">Sistemi almadan pulsuz sınayın</h2>
+          <p data-i18n="cta.text">3 sadə addımda biznesinizə uyğun demo: bizə yazın, işinizi öyrənək, sistemi sizin nümunənizlə canlı göstərək.</p>
+        </div>
+        <a href="#contact" class="btn btn--white"><span data-i18n="hero.cta1">Pulsuz demo üçün yazın</span> →</a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section section--alt" id="contact">
+      <div class="container contact">
+        <div class="contact__info">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Əlaqə</span>
+          <h2 data-i18n="contact.title">Layihənizi müzakirə edək</h2>
+          <p data-i18n="contact.text">Formu doldurun — müraciətiniz birbaşa WhatsApp-a yönləndiriləcək və tezliklə sizə cavab verəcəyik.</p>
+          <ul class="contact__list">
+            <li><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="#" class="js-phone">+994 50 824 14 00</a></li>
+            <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><a href="https://instagram.com/nevotech.az" target="_blank" rel="noopener" class="js-instagram">@nevotech.az</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><a href="#" target="_blank" rel="noopener" class="js-map" data-i18n="contact.address">Bakı, Nərimanov r., E. Rəcəbli küç., Aynalı Plaza</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <label>
+            <span data-i18n="form.name">Adınız</span>
+            <input type="text" name="name" required data-i18n-ph="form.namePh" placeholder="Adınızı daxil edin">
+          </label>
+          <label>
+            <span data-i18n="form.phone">Telefon</span>
+            <input type="tel" name="phone" required placeholder="+994 __ ___ __ __">
+          </label>
+          <label>
+            <span data-i18n="form.service">Xidmət</span>
+            <select name="service">
+              <option value="services.s1.t" data-i18n="services.s1.t">Veb saytlar</option>
+              <option value="services.s2.t" data-i18n="services.s2.t">İdarəetmə sistemləri</option>
+              <option value="services.s3.t" data-i18n="services.s3.t">ERP sistemləri</option>
+              <option value="services.s4.t" data-i18n="services.s4.t">Hesabatlar</option>
+              <option value="services.s5.t" data-i18n="services.s5.t">Analiz və dashboardlar</option>
+              <option value="services.s6.t" data-i18n="services.s6.t">Anbar idarəetməsi</option>
+              <option value="services.s7.t" data-i18n="services.s7.t">Satış sistemləri</option>
+              <option value="services.s8.t" data-i18n="services.s8.t">AI chatbot sistemləri</option>
+              <option value="form.other" data-i18n="form.other">Digər</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="form.message">Mesajınız</span>
+            <textarea name="message" rows="4" data-i18n-ph="form.messagePh" placeholder="Layihəniz haqqında qısa yazın"></textarea>
+          </label>
+          <p class="form__error" id="formError" data-i18n="form.error" hidden>Zəhmət olmasa adınızı və telefon nömrənizi yazın.</p>
+          <button type="submit" class="btn btn--wa">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+            <span data-i18n="form.submit">WhatsApp-a göndər</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a href="#home" class="logo"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg>NevoTech</a>
+        <p data-i18n="footer.text">Sahibkarlar üçün rəqəmsal həllər.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="#services" data-i18n="nav.services">Xidmətlər</a>
+        <a href="#about" data-i18n="nav.about">Haqqımızda</a>
+        <a href="#faq" data-i18n="nav.faq">Suallar</a>
+        <a href="#contact" data-i18n="nav.contact">Əlaqə</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      © <span id="year"></span> NevoTech. <span data-i18n="footer.rights">Bütün hüquqlar qorunur.</span>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="wa-float js-wa-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path d="M8.5 8.5c.5 2.5 2.5 5 5.5 6l1.3-1.3 2 1-.6 1.8c-4 .3-8.7-4.3-8.4-8.4l1.8-.6 1 2z"/></svg>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
