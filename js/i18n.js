@@ -23,8 +23,8 @@ const TRANSLATIONS = {
     "nav.contact": "Əlaqə",
     "nav.cta": "Müraciət et",
 
-    "hero.title": "Biznesinizi daha ağıllı idarə etməyin yeni yolu.",
-    "hero.text": "Veb və mobil həllərdən ERP sistemlərinə, satış idarəetməsindən data analitikasına qədər biznesinizin ehtiyac duyduğu bütün texnologiyalar bir ünvanda.",
+    "hero.title": "Biznesinizi daha ağıllı idarə edin.",
+    "hero.text": "Veb, mobil, ERP, satış və data analitikası — bütün texnologiyalar bir ünvanda.",
     "hero.cta1": "Pulsuz demo istə",
     "hero.cta2": "Həllərə bax",
 
@@ -174,8 +174,8 @@ const TRANSLATIONS = {
     "nav.contact": "Contact",
     "nav.cta": "Get in touch",
 
-    "hero.title": "A smarter way to run your business.",
-    "hero.text": "From web and mobile solutions to ERP systems, from sales management to data analytics — every technology your business needs, in one place.",
+    "hero.title": "Run your business smarter.",
+    "hero.text": "Web, mobile, ERP, sales and data analytics — all the technology you need, in one place.",
     "hero.cta1": "Request a free demo",
     "hero.cta2": "Explore solutions",
 
@@ -325,8 +325,8 @@ const TRANSLATIONS = {
     "nav.contact": "Контакты",
     "nav.cta": "Оставить заявку",
 
-    "hero.title": "Новый способ управлять бизнесом умнее.",
-    "hero.text": "От веб- и мобильных решений до ERP-систем, от управления продажами до аналитики данных — все технологии, которые нужны вашему бизнесу, в одном месте.",
+    "hero.title": "Управляйте бизнесом умнее.",
+    "hero.text": "Веб, мобильные решения, ERP, продажи и аналитика — все технологии в одном месте.",
     "hero.cta1": "Бесплатное демо",
     "hero.cta2": "Смотреть решения",
 
