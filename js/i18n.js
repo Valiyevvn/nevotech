@@ -23,8 +23,8 @@ const TRANSLATIONS = {
     "nav.contact": "Əlaqə",
     "nav.cta": "Müraciət et",
 
-    "hero.title": "Biznesinizin bütün işi bir sistemdə.",
-    "hero.text": "Sayt, ERP, anbar, satış, hesabat və AI chatbot. Biznesiniz üçün hər birini ayrıca, ya da hamısını bir sistem kimi qururuq.",
+    "hero.title": "Biznesinizi daha ağıllı idarə etməyin yeni yolu.",
+    "hero.text": "Veb və mobil həllərdən ERP sistemlərinə, satış idarəetməsindən data analitikasına qədər biznesinizin ehtiyac duyduğu bütün texnologiyalar bir ünvanda.",
     "hero.cta1": "Pulsuz demo istə",
     "hero.cta2": "Həllərə bax",
 
@@ -174,8 +174,8 @@ const TRANSLATIONS = {
     "nav.contact": "Contact",
     "nav.cta": "Get in touch",
 
-    "hero.title": "Your whole business in one system.",
-    "hero.text": "Website, ERP, inventory, sales, reporting and AI chatbot. We build each one for your business on its own, or all of them as one system.",
+    "hero.title": "A smarter way to run your business.",
+    "hero.text": "From web and mobile solutions to ERP systems, from sales management to data analytics — every technology your business needs, in one place.",
     "hero.cta1": "Request a free demo",
     "hero.cta2": "Explore solutions",
 
@@ -325,8 +325,8 @@ const TRANSLATIONS = {
     "nav.contact": "Контакты",
     "nav.cta": "Оставить заявку",
 
-    "hero.title": "Весь ваш бизнес в одной системе.",
-    "hero.text": "Сайт, ERP, склад, продажи, отчёты и AI-чат-бот. Создаём для вашего бизнеса каждое решение отдельно или всё как одну систему.",
+    "hero.title": "Новый способ управлять бизнесом умнее.",
+    "hero.text": "От веб- и мобильных решений до ERP-систем, от управления продажами до аналитики данных — все технологии, которые нужны вашему бизнесу, в одном месте.",
     "hero.cta1": "Бесплатное демо",
     "hero.cta2": "Смотреть решения",
 
