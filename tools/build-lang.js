@@ -25,6 +25,9 @@ vm.createContext(context);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "js/i18n.js"), "utf8") + "\nthis.TRANSLATIONS = TRANSLATIONS;", context);
 const TRANSLATIONS = context.TRANSLATIONS;
 
+const version = (file) =>
+  require("crypto").createHash("sha1").update(fs.readFileSync(path.join(ROOT, file))).digest("hex").slice(0, 8);
+
 const escText = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const escAttr = (s) => escText(s).replace(/"/g, "&quot;");
 
@@ -84,7 +87,9 @@ function build(template, lang) {
     .replace(/(<(\w+)\b[^>]*\sdata-i18n="([^"]+)"[^>]*>)([^<]*)(<\/\2>)/g, (m, open, tag, key, _old, close) => open + escText(get(key)) + close)
     // Placeholders and accessible names
     .replace(/(\splaceholder=")[^"]*("[^>]*\sdata-i18n-ph="([^"]+)")/g, (m, a, b, key) => a + escAttr(get(key)) + b)
-    .replace(/(\saria-label=")[^"]*("[^>]*\sdata-i18n-aria="([^"]+)")/g, (m, a, b, key) => a + escAttr(get(key)) + b);
+    .replace(/(\saria-label=")[^"]*("[^>]*\sdata-i18n-aria="([^"]+)")/g, (m, a, b, key) => a + escAttr(get(key)) + b)
+    // A content hash in the URL makes browsers drop a cached copy as soon as the file changes
+    .replace(/((?:href|src)="((?:css|js)\/[\w-]+\.(?:css|js)))(?:\?v=[0-9a-f]+)?"/g, (m, attr, file) => `${attr}?v=${version(file)}"`);
 
   // Pages in a sub-folder reach shared files one level up
   if (LANGS[lang].dir) html = html.replace(/(href|src)="(css|js|assets)\//g, `$1="../$2/`);
