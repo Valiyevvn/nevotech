@@ -11,6 +11,9 @@ const SITE_CONFIG = {
   // Instagram istifadəçi adı (@ işarəsiz)
   instagram: "nevotech.az",
 
+  // TikTok istifadəçi adı (@ işarəsiz)
+  tiktok: "nevotech.az",
+
   // Xəritə linki (ünvana klik ediləndə açılır)
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Aynal%C4%B1+Plaza+Bak%C4%B1",
 };

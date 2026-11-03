@@ -27,7 +27,7 @@
   <link rel="preload" href="assets/fonts/geist-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/logo-mark.png">
-  <link rel="stylesheet" href="css/style.css?v=884a0319">
+  <link rel="stylesheet" href="css/style.css?v=7ee9a9e1">
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="a11y.skip">Məzmuna keç</a>
@@ -38,7 +38,7 @@
       <a href="#home" class="logo" aria-label="NevoTech"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg><span>NevoTech</span></a>
 
       <nav class="nav" id="nav" aria-label="Əsas menyu" data-i18n-aria="a11y.nav">
-        <a href="#modules" data-i18n="nav.modules">Modullar</a>
+        <a href="#solutions" data-i18n="nav.modules">Həllər</a>
         <a href="#system" data-i18n="nav.system">Necə işləyir</a>
         <a href="#process" data-i18n="nav.process">Proses</a>
         <a href="#faq" data-i18n="nav.faq">Suallar</a>
@@ -68,7 +68,7 @@
         <p class="hero__lead" data-i18n="hero.text">Sayt, ERP, anbar, satış, hesabat və AI chatbot. Biznesiniz üçün hər birini ayrıca, ya da hamısını bir sistem kimi qururuq.</p>
         <div class="hero__buttons">
           <a href="#contact" class="btn btn--light" data-i18n="hero.cta1">Pulsuz demo istə</a>
-          <a href="#modules" class="btn btn--dark" data-i18n="hero.cta2">Modullara bax</a>
+          <a href="#solutions" class="btn btn--dark" data-i18n="hero.cta2">Həllərə bax</a>
         </div>
       </div>
 
@@ -81,144 +81,192 @@
       </div>
     </section>
 
-    <!-- ===== MODULES (bento) ===== -->
-    <section class="section" id="modules">
+    <!-- ===== SOLUTIONS: one list, one live preview ===== -->
+    <section class="section" id="solutions">
       <div class="section__head">
-        <h2 data-i18n="modules.title">Sisteminizi modul‑modul qurun.</h2>
-        <p data-i18n="modules.text">Hər modul ayrıca işləyir. Bir neçəsini seçsəniz, eyni bazada birləşir. Seçdikləriniz müraciət formuna öz-özünə düşür.</p>
+        <h2 data-i18n="modules.title">Biznesiniz üçün ağıllı rəqəmsal həllər.</h2>
+        <p data-i18n="modules.text">Biznesinizi rəqəmsallaşdırır, prosesləri avtomatlaşdırır və idarəetməni daha effektiv edirik.</p>
       </div>
 
-      <div class="bento">
+      <ul class="sols" id="sols">
         <!-- AI chatbot -->
-        <article class="cell cell--wide" data-module="ai">
-          <div class="cell__text">
-            <h3 data-i18n="mod.ai">AI chatbot</h3>
-            <p data-i18n="cell.ai">WhatsApp, Instagram və saytda gecə-gündüz cavab verir, sifariş qəbul edir.</p>
-          </div>
-          <div class="viz chat" data-seq="1400" aria-hidden="true">
-            <span class="chat__time" data-i18n="chat.time">Gecə, 03:14</span>
-            <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c1">Salam, 42 ölçü ağ krossovka var?</p>
-            <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c2">Salam! Var, 2 cüt qalıb. Sifariş edək?</p>
-            <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c3">Bəli, Nərimanova çatdırın.</p>
-            <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c4">Sifariş #1042 qəbul olundu. Sabah çatdırılacaq.</p>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-
-        <!-- Stock -->
-        <article class="cell" data-module="stock">
-          <div class="cell__text">
-            <h3 data-i18n="mod.stock">Anbar</h3>
-            <p data-i18n="cell.stock">Qalıq real vaxtda görünür. Mal bitəndə sistem özü xəbər verir.</p>
-          </div>
-          <div class="viz stock" id="stockViz" aria-hidden="true">
-            <div class="stock__row" data-qty="412"><span data-i18n="stock.i1">Un, 1 kq</span><i class="stock__bar"><b></b></i><span class="stock__qty">412</span></div>
-            <div class="stock__row" data-qty="238"><span data-i18n="stock.i2">Şəkər</span><i class="stock__bar"><b></b></i><span class="stock__qty">238</span></div>
-            <div class="stock__row" data-qty="96"><span data-i18n="stock.i3">Yağ, 5 l</span><i class="stock__bar"><b></b></i><span class="stock__qty">96</span></div>
-            <div class="stock__row" data-qty="34" data-watch><span data-i18n="stock.i4">Çay</span><i class="stock__bar"><b></b></i><span class="stock__qty">34</span></div>
-            <p class="stock__alert" data-i18n="stock.low">Çay az qalıb, sifariş verin</p>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-
-        <!-- Sales -->
-        <article class="cell" data-module="sales">
-          <div class="cell__text">
-            <h3 data-i18n="mod.sales">Satış</h3>
-            <p data-i18n="cell.sales">Kassa, sifariş və müştəri bazası. Hər satış anbara və hesabata öz-özünə düşür.</p>
-          </div>
-          <div class="viz receipt" data-seq="900" aria-hidden="true">
-            <p class="receipt__head"><span data-i18n="receipt.title">Çek</span> #1042</p>
-            <p class="receipt__line" data-step><span data-i18n="receipt.i1">Krossovka, 42</span><span>79.00</span></p>
-            <p class="receipt__line" data-step><span data-i18n="receipt.i2">Corab</span><span>7.40</span></p>
-            <p class="receipt__line receipt__line--total" data-step><span data-i18n="receipt.total">Cəmi</span><span>86.40 AZN</span></p>
-            <p class="receipt__ok" data-step data-i18n="receipt.ok">Anbardan silindi, hesabata yazıldı</p>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-
-        <!-- Reports -->
-        <article class="cell" data-module="reports">
-          <div class="cell__text">
-            <h3 data-i18n="mod.reports">Hesabat</h3>
-            <p data-i18n="cell.reports">Gündəlik, aylıq və illik hesabatlar avtomatik hazırlanır.</p>
-          </div>
-          <div class="viz report" aria-hidden="true">
-            <div class="report__top"><span data-i18n="report.label">Gəlir, oktyabr</span><b>+18%</b></div>
-            <svg class="report__chart" viewBox="0 0 240 90" preserveAspectRatio="none">
-              <path class="report__grid" d="M0 22.5H240M0 45H240M0 67.5H240"/>
-              <path class="report__area" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12 V90 H0Z"/>
-              <path class="report__line" pathLength="1" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12"/>
-            </svg>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-
-        <!-- ERP -->
-        <article class="cell" data-module="erp">
-          <div class="cell__text">
-            <h3 data-i18n="mod.erp">ERP</h3>
-            <p data-i18n="cell.erp">Maliyyə, kadr, satış və anbar bir bazada. Hər şöbə eyni rəqəmləri görür.</p>
-          </div>
-          <div class="viz erp" aria-hidden="true">
-            <svg class="erp__links" viewBox="0 0 240 120" preserveAspectRatio="none">
-              <path d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
-              <path class="flow" d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
-            </svg>
-            <span class="erp__node" style="--x:25%;--y:25%" data-i18n="erp.n1">Maliyyə</span>
-            <span class="erp__node" style="--x:75%;--y:25%" data-i18n="erp.n2">Kadr</span>
-            <span class="erp__node" style="--x:25%;--y:75%" data-i18n="erp.n3">Satış</span>
-            <span class="erp__node" style="--x:75%;--y:75%" data-i18n="erp.n4">Anbar</span>
-            <span class="erp__core">DB</span>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-
-        <!-- Website -->
-        <article class="cell" data-module="web">
-          <div class="cell__text">
-            <h3 data-i18n="mod.web">Veb sayt</h3>
-            <p data-i18n="cell.web">Tanıtım saytı və onlayn mağaza. Telefonda sürətli açılır, Google-da tapılır.</p>
-          </div>
-          <div class="viz browser" aria-hidden="true">
-            <div class="browser__bar"><i></i><i></i><i></i><span>sizinbiznes.az</span></div>
-            <div class="browser__body">
-              <div class="browser__lines"><b></b><b></b><b></b></div>
-              <div class="score"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9"/><circle class="score__arc" cx="18" cy="18" r="15.9" pathLength="100"/></svg><span>100</span></div>
+        <li class="sol is-active" data-module="ai">
+          <button type="button" class="sol__head" aria-expanded="true" aria-controls="sol-ai">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M9 11.5h.01M12.5 11.5h.01M16 11.5h.01"/></svg>
+            <span data-i18n="mod.ai">AI chatbot</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.ai">WhatsApp, Instagram və saytda gecə-gündüz cavab verir, sifariş qəbul edir.</p></div>
+          <div class="sol__stage" id="sol-ai">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.ai">AI chatbot</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz chat" data-seq="1400">
+                <span class="chat__time" data-i18n="chat.time">Gecə, 03:14</span>
+                <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c1">Salam, 42 ölçü ağ krossovka var?</p>
+                <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c2">Salam! Var, 2 cüt qalıb. Sifariş edək?</p>
+                <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c3">Bəli, Nərimanova çatdırın.</p>
+                <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c4">Sifariş #1042 qəbul olundu. Sabah çatdırılacaq.</p>
+              </div>
             </div>
           </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
+        </li>
+
+        <!-- Stock -->
+        <li class="sol" data-module="stock">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-stock">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 7.5 12 3 3.5 7.5v9L12 21l8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></svg>
+            <span data-i18n="mod.stock">Anbar</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.stock">Qalıq real vaxtda görünür. Mal bitəndə sistem özü xəbər verir.</p></div>
+          <div class="sol__stage" id="sol-stock">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.stock">Anbar</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz stock" id="stockViz">
+                <div class="stock__row" data-qty="412"><span data-i18n="stock.i1">Un, 1 kq</span><i class="stock__bar"><b></b></i><span class="stock__qty">412</span></div>
+                <div class="stock__row" data-qty="238"><span data-i18n="stock.i2">Şəkər</span><i class="stock__bar"><b></b></i><span class="stock__qty">238</span></div>
+                <div class="stock__row" data-qty="96"><span data-i18n="stock.i3">Yağ, 5 l</span><i class="stock__bar"><b></b></i><span class="stock__qty">96</span></div>
+                <div class="stock__row" data-qty="34" data-watch><span data-i18n="stock.i4">Çay</span><i class="stock__bar"><b></b></i><span class="stock__qty">34</span></div>
+                <p class="stock__alert" data-i18n="stock.low">Çay az qalıb, sifariş verin</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Sales -->
+        <li class="sol" data-module="sales">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-sales">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-1.8-3 1.8-3-1.8L6 21z"/><path d="M9.5 8h5M9.5 12h5"/></svg>
+            <span data-i18n="mod.sales">Satış</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.sales">Kassa, sifariş və müştəri bazası. Hər satış anbara və hesabata öz-özünə düşür.</p></div>
+          <div class="sol__stage" id="sol-sales">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.sales">Satış</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz receipt" data-seq="900">
+                <p class="receipt__head"><span data-i18n="receipt.title">Çek</span> #1042</p>
+                <p class="receipt__line" data-step><span data-i18n="receipt.i1">Krossovka, 42</span><span>79.00</span></p>
+                <p class="receipt__line" data-step><span data-i18n="receipt.i2">Corab</span><span>7.40</span></p>
+                <p class="receipt__line receipt__line--total" data-step><span data-i18n="receipt.total">Cəmi</span><span>86.40 AZN</span></p>
+                <p class="receipt__ok" data-step data-i18n="receipt.ok">Anbardan silindi, hesabata yazıldı</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Reports -->
+        <li class="sol" data-module="reports">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-reports">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16"/><path d="m8 15 3.5-4 3 2.5L19 8"/></svg>
+            <span data-i18n="mod.reports">Hesabat</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.reports">Gündəlik, aylıq və illik hesabatlar avtomatik hazırlanır.</p></div>
+          <div class="sol__stage" id="sol-reports">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.reports">Hesabat</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz report">
+                <div class="report__top"><span data-i18n="report.label">Gəlir, oktyabr</span><b>+18%</b></div>
+                <svg class="report__chart" viewBox="0 0 240 90" preserveAspectRatio="none">
+                  <path class="report__grid" d="M0 22.5H240M0 45H240M0 67.5H240"/>
+                  <path class="report__area" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12 V90 H0Z"/>
+                  <path class="report__line" pathLength="1" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ERP -->
+        <li class="sol" data-module="erp">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-erp">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 8.5 4.5-8.5 4.5L3.5 8z"/><path d="m3.5 12 8.5 4.5 8.5-4.5M3.5 16l8.5 4.5 8.5-4.5"/></svg>
+            <span data-i18n="mod.erp">ERP</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.erp">Maliyyə, kadr, satış və anbar bir bazada. Hər şöbə eyni rəqəmləri görür.</p></div>
+          <div class="sol__stage" id="sol-erp">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.erp">ERP</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz erp">
+                <svg class="erp__links" viewBox="0 0 240 120" preserveAspectRatio="none">
+                  <path d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
+                  <path class="flow" d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
+                </svg>
+                <span class="erp__node" style="--x:25%;--y:25%" data-i18n="erp.n1">Maliyyə</span>
+                <span class="erp__node" style="--x:75%;--y:25%" data-i18n="erp.n2">Kadr</span>
+                <span class="erp__node" style="--x:25%;--y:75%" data-i18n="erp.n3">Satış</span>
+                <span class="erp__node" style="--x:75%;--y:75%" data-i18n="erp.n4">Anbar</span>
+                <span class="erp__core">DB</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Website -->
+        <li class="sol" data-module="web">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-web">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5a13 13 0 0 1 0 17M12 3.5a13 13 0 0 0 0 17"/></svg>
+            <span data-i18n="mod.web">Veb sayt</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.web">Tanıtım saytı və onlayn mağaza. Telefonda sürətli açılır, Google-da tapılır.</p></div>
+          <div class="sol__stage" id="sol-web">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.web">Veb sayt</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz browser">
+                <div class="browser__bar"><i></i><i></i><i></i><span>sizinbiznes.az</span></div>
+                <div class="browser__body">
+                  <div class="browser__lines"><b></b><b></b><b></b></div>
+                  <div class="score"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9"/><circle class="score__arc" cx="18" cy="18" r="15.9" pathLength="100"/></svg><span>100</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
 
         <!-- Data -->
-        <article class="cell" data-module="data">
-          <div class="cell__text">
-            <h3 data-i18n="mod.data">Data analiz</h3>
-            <p data-i18n="cell.data">Hansı filialın, hansı məhsulun qazandırdığını rəqəmlə görürsünüz.</p>
+        <li class="sol" data-module="data">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-data">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 20v-8M12 20V4M18.5 20v-11"/></svg>
+            <span data-i18n="mod.data">Data analiz</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.data">Hansı filialın, hansı məhsulun qazandırdığını rəqəmlə görürsünüz.</p></div>
+          <div class="sol__stage" id="sol-data">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.data">Data analiz</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz bars">
+                <div class="bars__row"><span data-i18n="data.b1">Nərimanov</span><i style="--w:92%"></i></div>
+                <div class="bars__row"><span data-i18n="data.b2">Yasamal</span><i style="--w:64%"></i></div>
+                <div class="bars__row"><span data-i18n="data.b3">Xətai</span><i style="--w:41%"></i></div>
+              </div>
+            </div>
           </div>
-          <div class="viz bars" aria-hidden="true">
-            <div class="bars__row"><span data-i18n="data.b1">Nərimanov</span><i style="--w:92%"></i></div>
-            <div class="bars__row"><span data-i18n="data.b2">Yasamal</span><i style="--w:64%"></i></div>
-            <div class="bars__row"><span data-i18n="data.b3">Xətai</span><i style="--w:41%"></i></div>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
+        </li>
 
         <!-- Apps -->
-        <article class="cell" data-module="apps">
-          <div class="cell__text">
-            <h3 data-i18n="mod.apps">Tətbiqlər</h3>
-            <p data-i18n="cell.apps">Android və iOS: müştəriləriniz üçün sifariş, işçiləriniz üçün iş tətbiqi.</p>
+        <li class="sol" data-module="apps">
+          <button type="button" class="sol__head" aria-expanded="false" aria-controls="sol-apps">
+            <svg class="sol__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+            <span data-i18n="mod.apps">Tətbiqlər</span>
+            <i class="sol__mark" aria-hidden="true"></i>
+          </button>
+          <div class="sol__more"><p data-i18n="cell.apps">Android və iOS: müştəriləriniz üçün sifariş, işçiləriniz üçün iş tətbiqi.</p></div>
+          <div class="sol__stage" id="sol-apps">
+            <div class="sol__bar"><span class="sol__crumb"><i>nevotech / </i><span data-i18n="mod.apps">Tətbiqlər</span></span><button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button></div>
+            <div class="sol__view" aria-hidden="true">
+              <div class="viz phone" data-seq="1200">
+                <p class="phone__title"><span data-i18n="app.order">Sifariş</span> #1042</p>
+                <p class="phone__step" data-step data-i18n="app.s1">Qəbul edildi</p>
+                <p class="phone__step" data-step data-i18n="app.s2">Hazırlanır</p>
+                <p class="phone__step" data-step data-i18n="app.s3">Yoldadır</p>
+              </div>
+            </div>
           </div>
-          <div class="viz phone" data-seq="1200" aria-hidden="true">
-            <p class="phone__title"><span data-i18n="app.order">Sifariş</span> #1042</p>
-            <p class="phone__step" data-step data-i18n="app.s1">Qəbul edildi</p>
-            <p class="phone__step" data-step data-i18n="app.s2">Hazırlanır</p>
-            <p class="phone__step" data-step data-i18n="app.s3">Yoldadır</p>
-          </div>
-          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">Sistemdədir</span><span class="pick__off" data-i18n="pick.off">Sistemə əlavə et</span></button>
-        </article>
-      </div>
+        </li>
+      </ul>
 
       <div class="picked">
         <p id="pickedCount" aria-live="polite"></p>
@@ -230,7 +278,7 @@
     <section class="section" id="system">
       <div class="section__head">
         <h2 data-i18n="system.title">Bir satış, dörd yerdə.</h2>
-        <p data-i18n="system.text">Modullar ayrı-ayrı proqramlar deyil, bir sistemdir. Kassada edilən satış anbardan silinir, hesabata düşür, axşam telefonunuza xülasə gəlir. Heç kim heç nəyi əl ilə köçürmür.</p>
+        <p data-i18n="system.text">Həllərimiz ayrı-ayrı proqramlar deyil, bir sistemdir. Kassada edilən satış anbardan silinir, hesabata düşür, axşam telefonunuza xülasə gəlir. Heç kim heç nəyi əl ilə köçürmür.</p>
       </div>
       <div class="flow-wrap" aria-hidden="true">
         <div class="pipeline">
@@ -289,10 +337,10 @@
         <p><span data-i18n="faq.text">Cavabını tapmadığınız sual varsa,</span> <a href="#" class="js-wa-link" data-i18n="faq.link">WhatsApp-da yazın</a>.</p>
       </div>
       <div class="faq__list">
-        <details><summary data-i18n="faq.q1">Xidmətləri ayrıca almaq olar?</summary><p data-i18n="faq.a1">Bəli. Hər modul müstəqil işləyir. Sonradan yenisini əlavə etsəniz, mövcud sistemə qoşulur.</p></details>
+        <details><summary data-i18n="faq.q1">Xidmətləri ayrıca almaq olar?</summary><p data-i18n="faq.a1">Bəli. Hər həll müstəqil işləyir. Sonradan yenisini əlavə etsəniz, mövcud sistemə qoşulur.</p></details>
         <details><summary data-i18n="faq.q2">Pulsuz demo necə işləyir?</summary><p data-i18n="faq.a2">İşinizə uyğun nümunə sistem qurub canlı göstəririk. Ödəniş və öhdəlik yoxdur: bəyənməsəniz, heç nə borclu deyilsiniz.</p></details>
         <details><summary data-i18n="faq.q3">Layihə nə qədər vaxt aparır?</summary><p data-i18n="faq.a3">Sadə tanıtım saytı 1–2 həftə, ERP və idarəetmə sistemləri isə həcmindən asılı olaraq 1–3 ay çəkir.</p></details>
-        <details><summary data-i18n="faq.q4">Qiymət necə müəyyən olunur?</summary><p data-i18n="faq.a4">Qiymət seçdiyiniz modullardan və funksiyaların həcmindən asılıdır. Tanışlıqdan sonra dəqiq təklif təqdim edirik.</p></details>
+        <details><summary data-i18n="faq.q4">Qiymət necə müəyyən olunur?</summary><p data-i18n="faq.a4">Qiymət seçdiyiniz həllərdən və funksiyaların həcmindən asılıdır. Tanışlıqdan sonra dəqiq təklif təqdim edirik.</p></details>
         <details><summary data-i18n="faq.q5">Mövcud proqramımızla işləyəcək?</summary><p data-i18n="faq.a5">Əksər hallarda bəli. İstifadə etdiyiniz proqramlarla inteqrasiya imkanlarını birlikdə araşdırırıq.</p></details>
         <details><summary data-i18n="faq.q6">Məlumatlarımız qorunur?</summary><p data-i18n="faq.a6">Bəli. Məlumatlar qorunan serverlərdə saxlanılır, ehtiyat nüsxələr çıxarılır. Hər işçinin nəyi görə biləcəyini siz təyin edirsiniz.</p></details>
         <details><summary data-i18n="faq.q7">Təhvildən sonra dəstək olurmu?</summary><p data-i18n="faq.a7">Bəli. Təhvildən sonra texniki dəstək veririk, lazım olduqda sistemi yeniləyirik.</p></details>
@@ -306,7 +354,8 @@
         <p data-i18n="contact.text">Formu doldurun: müraciətiniz WhatsApp-da hazır mesaj kimi açılacaq, siz sadəcə göndərirsiniz.</p>
         <dl class="contact__list">
           <div><dt data-i18n="contact.phone">Telefon</dt><dd><a href="#" class="js-phone">+994 50 824 14 00</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://instagram.com/nevotech.az" target="_blank" rel="noopener" class="js-instagram">@nevotech.az</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/nevotech.az" target="_blank" rel="noopener" data-social="instagram">@nevotech.az</a></dd></div>
+          <div><dt>TikTok</dt><dd><a href="https://www.tiktok.com/@nevotech.az" target="_blank" rel="noopener" data-social="tiktok">@nevotech.az</a></dd></div>
           <div><dt data-i18n="contact.addressLabel">Ünvan</dt><dd><a href="#" target="_blank" rel="noopener" class="js-map" data-i18n="contact.address">Bakı, Nərimanov r., E. Rəcəbli küç., Aynalı Plaza</a></dd></div>
         </dl>
       </div>
@@ -323,7 +372,7 @@
           </label>
         </div>
         <fieldset class="field">
-          <legend data-i18n="form.modules">Hansı modullar lazımdır?</legend>
+          <legend data-i18n="form.modules">Hansı həllər lazımdır?</legend>
           <div class="chips">
             <label class="chip"><input type="checkbox" name="modules" value="ai"><span data-i18n="mod.ai">AI chatbot</span></label>
             <label class="chip"><input type="checkbox" name="modules" value="stock"><span data-i18n="mod.stock">Anbar</span></label>
@@ -354,9 +403,13 @@
     <div class="footer__brand">
       <a href="#home" class="logo" aria-label="NevoTech"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg><span>NevoTech</span></a>
       <p data-i18n="footer.text">Biznesiniz üçün proqram sistemləri.</p>
+      <nav class="footer__social" aria-label="Sosial şəbəkələr" data-i18n-aria="a11y.social">
+        <a href="https://instagram.com/nevotech.az" target="_blank" rel="noopener" data-social="instagram" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a href="https://www.tiktok.com/@nevotech.az" target="_blank" rel="noopener" data-social="tiktok" aria-label="TikTok"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.4V6.6a4.5 4.5 0 0 1-4.4-4.6z"/></svg></a>
+      </nav>
     </div>
     <nav class="footer__nav" aria-label="Footer">
-      <a href="#modules" data-i18n="nav.modules">Modullar</a>
+      <a href="#solutions" data-i18n="nav.modules">Həllər</a>
       <a href="#system" data-i18n="nav.system">Necə işləyir</a>
       <a href="#process" data-i18n="nav.process">Proses</a>
       <a href="#contact" data-i18n="nav.contact">Əlaqə</a>
@@ -369,8 +422,8 @@
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path d="M8.5 8.5c.5 2.5 2.5 5 5.5 6l1.3-1.3 2 1-.6 1.8c-4 .3-8.7-4.3-8.4-8.4l1.8-.6 1 2z"/></svg>
   </a>
 
-  <script src="js/config.js?v=85ad38fe" defer></script>
-  <script src="js/i18n.js?v=dfcdc3b9" defer></script>
-  <script src="js/main.js?v=b2434fa6" defer></script>
+  <script src="js/config.js?v=bc490abd" defer></script>
+  <script src="js/i18n.js?v=4178dea5" defer></script>
+  <script src="js/main.js?v=10cbb5dd" defer></script>
 </body>
 </html>

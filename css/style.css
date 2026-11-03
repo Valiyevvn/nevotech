@@ -262,26 +262,70 @@ p { text-wrap: pretty; }
 }
 @keyframes spin { to { rotate: 360deg; } }
 
-/* ---------- Bento ---------- */
-#modules { padding-bottom: 0; }
-.bento {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px;
-  margin-inline: calc(var(--pad) * -1);
-  background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+/* ---------- Solutions: a quiet list on the left, one live screen on the right ---------- */
+.sols { --list: 42%; position: relative; list-style: none; padding-right: calc(100% - var(--list)); }
+.sol { border-top: 1px solid var(--line); }
+.sol:last-child { border-bottom: 1px solid var(--line); }
+.sol__head {
+  width: 100%; display: flex; align-items: center; gap: 14px; padding: 17px 2px;
+  background: none; border: 0; cursor: pointer; text-align: left;
+  font-size: 17px; font-weight: 500; letter-spacing: -0.015em; color: var(--muted);
+  transition: color .15s;
 }
-.cell {
-  position: relative; background: var(--bg);
-  display: flex; flex-direction: column; gap: 24px;
-  padding: 32px; min-height: 360px;
-  transition: background-color .3s;
+.sol__head:hover, .sol.is-active .sol__head { color: var(--fg); }
+.sol__icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; color: var(--dim); transition: color .15s; }
+.sol.is-active .sol__icon { color: var(--orange-text); }
+/* A small orange tick next to every solution that is in the visitor's system */
+.sol__mark {
+  margin-left: auto; width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  background: var(--orange) center / 10px 10px no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 5.2 4.2 7.4 8 3' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  scale: 0; transition: scale .2s cubic-bezier(.2, .7, .2, 1.4);
 }
-.cell--wide { grid-column: span 2; }
-.cell.is-selected { background: radial-gradient(120% 80% at 100% 0%, rgba(255, 107, 0, .09), transparent 60%), var(--bg); }
-.cell__text p { margin-top: 6px; font-size: 15px; color: var(--muted); max-width: 44ch; }
-.viz { flex: 1; position: relative; font-family: var(--mono); font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; justify-content: center; }
+.sol.is-selected .sol__mark { scale: 1; }
+
+/* The description opens under the active item */
+.sol__more { position: relative; display: grid; grid-template-rows: 0fr; padding-left: 34px; transition: grid-template-rows .3s, padding-bottom .3s; }
+.sol__more p { overflow: hidden; min-height: 0; max-width: 44ch; font-size: 15px; color: var(--muted); visibility: hidden; transition: visibility .3s; }
+.sol.is-active .sol__more { grid-template-rows: 1fr; padding-bottom: 20px; }
+.sol.is-active .sol__more p { visibility: visible; }
+/* Progress bar while the list moves on by itself */
+.sol__more::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; z-index: 1;
+  background: var(--orange); transform-origin: left; transform: scaleX(0); opacity: 0;
+}
+.sols.is-auto .sol.is-active .sol__more::after { opacity: 1; animation: progress 7s linear forwards; }
+.sols.is-auto:not(.is-live) .sol__more::after,
+.sols.is-auto:hover .sol__more::after { animation-play-state: paused; }
+@keyframes progress { to { transform: scaleX(1); } }
+
+/* The screen: every solution has one, all stacked in the right column */
+.sol__stage {
+  position: absolute; top: 0; bottom: 0; right: 0; left: calc(var(--list) + 48px);
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--line-2); border-radius: 14px;
+  background:
+    radial-gradient(70% 55% at 50% 0%, rgba(255, 107, 0, .09), transparent 70%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--surface);
+  opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s;
+}
+.sol.is-active .sol__stage { opacity: 1; visibility: visible; }
+.sol__bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 10px 10px 16px; border-bottom: 1px solid var(--line); background: var(--bg);
+}
+.sol__crumb { font-family: var(--mono); font-size: 12px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sol__crumb span { color: var(--fg); }
+.sol__crumb i { font-style: normal; }
+.sol__view { flex: 1; min-height: 0; display: grid; place-items: center; padding: 32px; }
+:where(.sol__view) .viz { width: 100%; max-width: 420px; }
+
+.viz { position: relative; font-family: var(--mono); font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; justify-content: center; }
 
 .pick {
-  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
   height: 32px; padding: 0 12px 0 10px; border-radius: 999px;
   background: var(--bg); border: 1px solid var(--line-2); color: var(--muted);
   font-size: 13px; cursor: pointer; transition: border-color .15s, color .15s;
@@ -300,7 +344,7 @@ p { text-wrap: pretty; }
 .pick[aria-pressed="true"] .pick__on { display: inline; }
 .pick[aria-pressed="true"] .pick__off { display: none; }
 
-.picked { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 24px 0; color: var(--muted); font-size: 15px; }
+.picked { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 32px; color: var(--muted); font-size: 15px; }
 
 /* Revealed one by one by the sequencer in main.js */
 [data-step] { opacity: 0; translate: 0 6px; transition: opacity .35s, translate .35s; }
@@ -348,7 +392,7 @@ p { text-wrap: pretty; }
 @keyframes areaIn { 0%, 10% { opacity: 0; } 40%, 100% { opacity: 1; } }
 
 /* ERP */
-.erp { min-height: 150px; }
+.erp { min-height: 190px; }
 .erp__links { position: absolute; inset: 0; width: 100%; height: 100%; }
 .erp__links path { fill: none; stroke: var(--line-2); stroke-width: 1; vector-effect: non-scaling-stroke; }
 .erp__node, .erp__core {
@@ -524,6 +568,13 @@ p { text-wrap: pretty; }
 .footer .logo { color: var(--fg); font-size: 16px; }
 .footer .logo__mark { width: 22px; height: 22px; }
 .footer__brand p { margin-top: 12px; }
+.footer__social { display: flex; gap: 8px; margin-top: 20px; }
+.footer__social a {
+  width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px;
+  border: 1px solid var(--line-2); color: var(--muted); transition: color .15s, border-color .15s;
+}
+.footer__social a:hover { color: var(--fg); border-color: var(--line-hover); }
+.icon--fill { fill: currentColor; stroke: none; }
 .footer__nav { display: grid; gap: 8px; margin-left: auto; }
 .footer__nav a { text-decoration: none; color: var(--muted); }
 .footer__nav a:hover { color: var(--fg); }
@@ -542,7 +593,8 @@ p { text-wrap: pretty; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sols { --list: 46%; }
+  .sol__stage { left: calc(var(--list) + 32px); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .flow-wrap { grid-template-columns: 1fr; }
   .contact { gap: 40px; }
@@ -564,6 +616,13 @@ p { text-wrap: pretty; }
   .nav a:hover { background: none; }
   .faq, .contact { grid-template-columns: 1fr; gap: 40px; }
   .faq__intro { position: static; }
+
+  /* Phones: an accordion, the screen opens inside the active item */
+  .sols { padding-right: 0; }
+  .sol__stage { position: static; min-height: 270px; margin-bottom: 24px; transition: none; }
+  .sol:not(.is-active) .sol__stage { display: none; }
+  .sol__view { padding: 20px; }
+  .sol.is-active .sol__more { padding-bottom: 16px; }
 }
 
 @media (max-width: 820px) {
@@ -584,10 +643,8 @@ p { text-wrap: pretty; }
 
 @media (max-width: 640px) {
   .section { padding-block: 72px; }
-  .bento, .steps { grid-template-columns: 1fr; }
-  .cell--wide { grid-column: auto; }
-  .cell { min-height: 0; padding: 28px 24px; }
-  .viz { min-height: 150px; }
+  .steps { grid-template-columns: 1fr; }
+  .sol__crumb i { display: none; }
   .pipeline { grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 16px; }
   .pipeline__wires { display: none; }
   .log__lines li { grid-template-columns: 58px minmax(0, 1fr); }

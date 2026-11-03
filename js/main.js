@@ -13,17 +13,17 @@
       .observe(el);
   }
 
-  // ---------- Modules: one shared selection for bento cells and form ----------
+  // ---------- Solutions: one shared selection for the list and the form ----------
   const selected = new Set();
-  const cells = document.querySelectorAll(".cell[data-module]");
+  const sols = [...document.querySelectorAll(".sol[data-module]")];
   const formChecks = document.querySelectorAll('.chip input[name="modules"]');
   const pickedCount = document.getElementById("pickedCount");
 
   function renderSelection() {
-    cells.forEach((cell) => {
-      const on = selected.has(cell.dataset.module);
-      cell.classList.toggle("is-selected", on);
-      cell.querySelector(".pick").setAttribute("aria-pressed", on);
+    sols.forEach((sol) => {
+      const on = selected.has(sol.dataset.module);
+      sol.classList.toggle("is-selected", on);
+      sol.querySelector(".pick").setAttribute("aria-pressed", on);
     });
     formChecks.forEach((input) => (input.checked = selected.has(input.value)));
 
@@ -36,9 +36,9 @@
     renderSelection();
   }
 
-  cells.forEach((cell) => {
-    const id = cell.dataset.module;
-    cell.querySelector(".pick").addEventListener("click", () => setModule(id, !selected.has(id)));
+  sols.forEach((sol) => {
+    const id = sol.dataset.module;
+    sol.querySelector(".pick").addEventListener("click", () => setModule(id, !selected.has(id)));
   });
   formChecks.forEach((input) => input.addEventListener("change", () => setModule(input.value, input.checked)));
 
@@ -84,9 +84,11 @@
     el.href = `tel:+${SITE_CONFIG.whatsappNumber}`;
   });
   document.querySelectorAll(".js-map").forEach((el) => (el.href = SITE_CONFIG.mapUrl));
-  document.querySelectorAll(".js-instagram").forEach((el) => {
-    el.href = `https://instagram.com/${SITE_CONFIG.instagram}`;
-    el.textContent = `@${SITE_CONFIG.instagram}`;
+  const SOCIAL_URLS = { instagram: (h) => `https://instagram.com/${h}`, tiktok: (h) => `https://www.tiktok.com/@${h}` };
+  document.querySelectorAll("[data-social]").forEach((el) => {
+    const handle = SITE_CONFIG[el.dataset.social];
+    el.href = SOCIAL_URLS[el.dataset.social](handle);
+    if (!el.querySelector("svg")) el.textContent = `@${handle}`;  // icon links keep their icon
   });
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -181,7 +183,7 @@
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(grid, 0, 0);
+    if (grid.width && grid.height) ctx.drawImage(grid, 0, 0);  // the hero can be 0px wide while the tab is hidden
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     // Soft pulsing glow under the mark
@@ -252,7 +254,7 @@
     });
   }
 
-  // ---------- Bento: small live demos that only run while on screen ----------
+  // ---------- Solutions: small live demos, one on screen at a time ----------
   // Reveals [data-step] children one after another, holds, then starts over
   function sequencer(el) {
     const steps = [...el.querySelectorAll("[data-step]")];
@@ -262,7 +264,9 @@
       if (i < steps.length) { steps[i++].classList.add("on"); timer = setTimeout(tick, gap); }
       else { timer = setTimeout(() => { steps.forEach((s) => s.classList.remove("on")); i = 0; timer = setTimeout(tick, 600); }, 3200); }
     };
-    return { start: () => { if (!timer) tick(); }, stop: () => { clearTimeout(timer); timer = null; } };
+    // Stopping rewinds, so the demo plays from the start the next time it is shown
+    const stop = () => { clearTimeout(timer); timer = null; i = 0; steps.forEach((s) => s.classList.remove("on")); };
+    return { start: () => { if (!timer) tick(); }, stop };
   }
 
   // Stock levels drop with each sale; the watched item runs low and raises an alert
@@ -315,24 +319,64 @@
     return { start: () => { if (!timer) push(); }, stop: () => { clearTimeout(timer); timer = null; } };
   }
 
-  const demos = [];
-  document.querySelectorAll("[data-seq]").forEach((el) => demos.push([el, sequencer(el)]));
-  demos.push([document.getElementById("stockViz"), stockSim(document.getElementById("stockViz"))]);
-  demos.push([logLines, logSim()]);
+  // The list picks one solution; only its preview is shown and animated
+  const solList = document.getElementById("sols");
+  const narrow = window.matchMedia("(max-width: 820px)");
+  const solDemos = sols.map((sol) => {
+    const viz = sol.querySelector(".viz");
+    const demo = viz.hasAttribute("data-seq") ? sequencer(viz) : viz.id === "stockViz" ? stockSim(viz) : null;
+    return {
+      play() { viz.classList.add("is-live"); if (demo) demo.start(); },
+      pause() { viz.classList.remove("is-live"); if (demo) demo.stop(); },
+    };
+  });
+  let activeSol = 0, solsOnScreen = false;
 
-  demos.forEach(([el, demo]) => {
-    if (reduceMotion) {
-      el.querySelectorAll("[data-step]").forEach((s) => s.classList.add("on"));
-      if (el === logLines) { for (let i = 0; i < 4; i++) demo.start(), demo.stop(); }
-      return;
-    }
-    watchVisibility(el, demo.start, demo.stop);
+  function showSol(i) {
+    if (i === activeSol) return;
+    solDemos[activeSol].pause();
+    activeSol = i;
+    sols.forEach((sol, k) => {
+      sol.classList.toggle("is-active", k === i);
+      sol.querySelector(".sol__head").setAttribute("aria-expanded", k === i);
+    });
+    if (solsOnScreen && !reduceMotion) solDemos[i].play();
+  }
+
+  sols.forEach((sol, i) => {
+    const head = sol.querySelector(".sol__head");
+    head.addEventListener("click", () => {
+      solList.classList.remove("is-auto");  // a choice by the visitor ends the slideshow
+      showSol(i);
+      if (narrow.matches) head.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+    });
+    sol.querySelector(".pick").addEventListener("click", () => solList.classList.remove("is-auto"));
   });
 
-  // CSS-driven demos (charts, flowing wires) only animate while visible
-  document.querySelectorAll(".viz, .pipeline").forEach((el) => {
-    if (!reduceMotion) watchVisibility(el, () => el.classList.add("is-live"), () => el.classList.remove("is-live"));
+  // On wide screens the list moves on by itself; the bar under the open item shows when
+  if (!reduceMotion && !narrow.matches) solList.classList.add("is-auto");
+  narrow.addEventListener("change", (e) => { if (e.matches) solList.classList.remove("is-auto"); });
+  solList.addEventListener("animationend", (e) => {
+    if (e.pseudoElement === "::after" && solList.classList.contains("is-auto")) showSol((activeSol + 1) % sols.length);
   });
+
+  if (reduceMotion) {
+    document.querySelectorAll("[data-step]").forEach((s) => s.classList.add("on"));
+  } else {
+    watchVisibility(solList, () => {
+      solsOnScreen = true; solList.classList.add("is-live"); solDemos[activeSol].play();
+    }, () => {
+      solsOnScreen = false; solList.classList.remove("is-live"); solDemos[activeSol].pause();
+    });
+  }
+
+  const logDemo = logSim();
+  if (reduceMotion) { for (let i = 0; i < 4; i++) logDemo.start(), logDemo.stop(); }
+  else watchVisibility(logLines, logDemo.start, logDemo.stop);
+
+  // The flowing wires only animate while visible
+  const pipeline = document.querySelector(".pipeline");
+  if (!reduceMotion) watchVisibility(pipeline, () => pipeline.classList.add("is-live"), () => pipeline.classList.remove("is-live"));
 
   // The floating WhatsApp button steps aside while the contact form is on screen
   const waFloat = document.querySelector(".wa-float");
