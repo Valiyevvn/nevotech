@@ -13,7 +13,4 @@ const SITE_CONFIG = {
 
   // Xəritə linki (ünvana klik ediləndə açılır)
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Aynal%C4%B1+Plaza+Bak%C4%B1",
-
-  // Saytın açılış dili: "az", "en" və ya "ru"
-  defaultLang: "az",
 };

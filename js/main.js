@@ -1,8 +1,8 @@
 (function () {
-  const LANGS = ["az", "en", "ru"];
   const STORAGE_KEY = "nevotech-lang";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let currentLang = SITE_CONFIG.defaultLang;
+  // Each language has its own page (/, /en/, /ru/) with the text already in the HTML
+  const currentLang = TRANSLATIONS[document.documentElement.lang] ? document.documentElement.lang : "az";
 
   const t = (key) => (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || key;
   const waUrl = (text) => `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
@@ -43,40 +43,18 @@
   formChecks.forEach((input) => input.addEventListener("change", () => setModule(input.value, input.checked)));
 
   // ---------- Language ----------
-  function applyLang(lang) {
-    if (!LANGS.includes(lang)) lang = SITE_CONFIG.defaultLang;
-    currentLang = lang;
-
-    document.documentElement.lang = lang;
-    document.title = t("meta.title");
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      el.textContent = t(el.dataset.i18n);
+  // Remember the choice so the AZ page can send returning visitors to their language
+  document.querySelectorAll("#lang a").forEach((a) => {
+    a.addEventListener("click", () => {
+      try { localStorage.setItem(STORAGE_KEY, a.dataset.lang); } catch (e) {}
     });
-    document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
-      el.placeholder = t(el.dataset.i18nPh);
-    });
-    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-      el.setAttribute("aria-label", t(el.dataset.i18nAria));
-    });
-    document.querySelectorAll("#lang button").forEach((btn) => {
-      btn.setAttribute("aria-pressed", btn.dataset.lang === lang);
-    });
+  });
 
-    // Generic WhatsApp links get a greeting in the current language
-    document.querySelectorAll(".js-wa-link").forEach((a) => {
-      a.href = waUrl(t("wa.default"));
-      a.target = "_blank";
-      a.rel = "noopener";
-    });
-
-    renderSelection();
-    renderThemeToggle();
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-  }
-
-  document.querySelectorAll("#lang button").forEach((btn) => {
-    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  // Generic WhatsApp links get a greeting in the current language
+  document.querySelectorAll(".js-wa-link").forEach((a) => {
+    a.href = waUrl(t("wa.default"));
+    a.target = "_blank";
+    a.rel = "noopener";
   });
 
   // ---------- Day / night theme ----------
@@ -398,7 +376,6 @@
   });
 
   // ---------- Init ----------
-  let saved = null;
-  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-  applyLang(saved || SITE_CONFIG.defaultLang);
+  renderSelection();
+  renderThemeToggle();
 })();

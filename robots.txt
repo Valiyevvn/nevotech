@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valiyevvn.github.io/nevotech/sitemap.xml

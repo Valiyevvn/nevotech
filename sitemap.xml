@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://valiyevvn.github.io/nevotech/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://valiyevvn.github.io/nevotech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://valiyevvn.github.io/nevotech/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://valiyevvn.github.io/nevotech/ru/"/>
+  </url>
+  <url>
+    <loc>https://valiyevvn.github.io/nevotech/en/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://valiyevvn.github.io/nevotech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://valiyevvn.github.io/nevotech/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://valiyevvn.github.io/nevotech/ru/"/>
+  </url>
+  <url>
+    <loc>https://valiyevvn.github.io/nevotech/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://valiyevvn.github.io/nevotech/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://valiyevvn.github.io/nevotech/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://valiyevvn.github.io/nevotech/ru/"/>
+  </url>
+</urlset>

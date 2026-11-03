@@ -1,10 +1,12 @@
 // =========================================================
 // TƏRCÜMƏLƏR — AZ / EN / RU
-// Mətnləri dəyişmək üçün uyğun dildə açarın dəyərini redaktə edin.
+// Mətnləri dəyişmək üçün uyğun dildə açarın dəyərini redaktə edin,
+// sonra səhifələri yeniləmək üçün işə salın: node tools/build-lang.js
 // =========================================================
 const TRANSLATIONS = {
   az: {
     "meta.title": "NevoTech — biznes üçün proqram sistemləri",
+    "meta.description": "NevoTech biznesiniz üçün veb sayt, ERP, anbar, satış, hesabat, data analiz, mobil tətbiq və AI chatbot sistemləri qurur. Demo pulsuzdur.",
 
     "a11y.skip": "Məzmuna keç",
     "a11y.nav": "Əsas menyu",
@@ -154,6 +156,7 @@ const TRANSLATIONS = {
 
   en: {
     "meta.title": "NevoTech — software systems for business",
+    "meta.description": "NevoTech builds websites, ERP, inventory, sales, reporting, data analytics, mobile apps and AI chatbots for your business. The demo is free.",
 
     "a11y.skip": "Skip to content",
     "a11y.nav": "Main menu",
@@ -303,6 +306,7 @@ const TRANSLATIONS = {
 
   ru: {
     "meta.title": "NevoTech — программные системы для бизнеса",
+    "meta.description": "NevoTech создаёт для вашего бизнеса сайты, ERP, системы склада, продаж и отчётности, аналитику, мобильные приложения и AI-чат-ботов. Демо бесплатно.",
 
     "a11y.skip": "Перейти к содержанию",
     "a11y.nav": "Главное меню",

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- seo:start -->
+  <title>NevoTech — software systems for business</title>
+  <meta name="description" content="NevoTech builds websites, ERP, inventory, sales, reporting, data analytics, mobile apps and AI chatbots for your business. The demo is free.">
+  <link rel="canonical" href="https://valiyevvn.github.io/nevotech/en/">
+  <link rel="alternate" hreflang="az" href="https://valiyevvn.github.io/nevotech/">
+  <link rel="alternate" hreflang="en" href="https://valiyevvn.github.io/nevotech/en/">
+  <link rel="alternate" hreflang="ru" href="https://valiyevvn.github.io/nevotech/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://valiyevvn.github.io/nevotech/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="NevoTech — software systems for business">
+  <meta property="og:description" content="NevoTech builds websites, ERP, inventory, sales, reporting, data analytics, mobile apps and AI chatbots for your business. The demo is free.">
+  <meta property="og:url" content="https://valiyevvn.github.io/nevotech/en/">
+  <meta property="og:image" content="https://valiyevvn.github.io/nevotech/assets/logo-mark.png">
+  <!-- seo:end -->
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <!-- Seçilmiş rejimi səhifə çəkilməzdən əvvəl tətbiq edir (gecə rejimi standartdır) -->
+  <script>try { if (localStorage.getItem("nevotech-theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
+  <link rel="preload" href="../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#home" class="logo" aria-label="NevoTech"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg><span>NevoTech</span></a>
+
+      <nav class="nav" id="nav" aria-label="Main menu" data-i18n-aria="a11y.nav">
+        <a href="#modules" data-i18n="nav.modules">Modules</a>
+        <a href="#system" data-i18n="nav.system">How it works</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <nav class="lang" id="lang" aria-label="Language" data-i18n-aria="a11y.lang">
+          <a href="../" hreflang="az" lang="az" data-lang="az">AZ</a>
+          <a href="../en/" hreflang="en" lang="en" data-lang="en" aria-current="page">EN</a>
+          <a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">RU</a>
+        </nav>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" data-i18n-aria="theme.toLight">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--light btn--sm header__cta" data-i18n="nav.cta">Get in touch</a>
+        <button type="button" class="burger" id="burger" aria-label="Open menu" data-i18n-aria="a11y.menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="frame">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__copy">
+        <h1 data-i18n="hero.title">Your whole business in one system.</h1>
+        <p class="hero__lead" data-i18n="hero.text">Website, ERP, inventory, sales, reporting and AI chatbot. We build each one for your business on its own, or all of them as one system.</p>
+        <div class="hero__buttons">
+          <a href="#contact" class="btn btn--light" data-i18n="hero.cta1">Request a free demo</a>
+          <a href="#modules" class="btn btn--dark" data-i18n="hero.cta2">Explore modules</a>
+        </div>
+      </div>
+
+      <div class="beams" id="beams" aria-hidden="true">
+        <canvas class="beams__canvas" id="beamsCanvas"></canvas>
+        <div class="beacon" id="beacon">
+          <span class="beacon__ring"></span>
+          <svg class="logo__mark beacon__mark" viewBox="0 0 2000 2000"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODULES (bento) ===== -->
+    <section class="section" id="modules">
+      <div class="section__head">
+        <h2 data-i18n="modules.title">Build your system module by module.</h2>
+        <p data-i18n="modules.text">Each module works on its own. Choose several and they share one database. Your picks go straight into the request form.</p>
+      </div>
+
+      <div class="bento">
+        <!-- AI chatbot -->
+        <article class="cell cell--wide" data-module="ai">
+          <div class="cell__text">
+            <h3 data-i18n="mod.ai">AI chatbot</h3>
+            <p data-i18n="cell.ai">Answers customers day and night on WhatsApp, Instagram and your website, and takes orders.</p>
+          </div>
+          <div class="viz chat" data-seq="1400" aria-hidden="true">
+            <span class="chat__time" data-i18n="chat.time">Night, 03:14</span>
+            <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c1">Hi, do you have white sneakers in size 42?</p>
+            <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c2">Hi! Yes, 2 pairs left. Shall we place an order?</p>
+            <p class="chat__msg chat__msg--in" data-step data-i18n="chat.c3">Yes, deliver to Narimanov please.</p>
+            <p class="chat__msg chat__msg--out" data-step data-i18n="chat.c4">Order #1042 confirmed. It will arrive tomorrow.</p>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Stock -->
+        <article class="cell" data-module="stock">
+          <div class="cell__text">
+            <h3 data-i18n="mod.stock">Inventory</h3>
+            <p data-i18n="cell.stock">Stock levels in real time. The system tells you when something runs low.</p>
+          </div>
+          <div class="viz stock" id="stockViz" aria-hidden="true">
+            <div class="stock__row" data-qty="412"><span data-i18n="stock.i1">Flour, 1 kg</span><i class="stock__bar"><b></b></i><span class="stock__qty">412</span></div>
+            <div class="stock__row" data-qty="238"><span data-i18n="stock.i2">Sugar</span><i class="stock__bar"><b></b></i><span class="stock__qty">238</span></div>
+            <div class="stock__row" data-qty="96"><span data-i18n="stock.i3">Oil, 5 l</span><i class="stock__bar"><b></b></i><span class="stock__qty">96</span></div>
+            <div class="stock__row" data-qty="34" data-watch><span data-i18n="stock.i4">Tea</span><i class="stock__bar"><b></b></i><span class="stock__qty">34</span></div>
+            <p class="stock__alert" data-i18n="stock.low">Tea is running low, reorder</p>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Sales -->
+        <article class="cell" data-module="sales">
+          <div class="cell__text">
+            <h3 data-i18n="mod.sales">Sales</h3>
+            <p data-i18n="cell.sales">Point of sale, orders and customer base. Every sale flows into inventory and reports.</p>
+          </div>
+          <div class="viz receipt" data-seq="900" aria-hidden="true">
+            <p class="receipt__head"><span data-i18n="receipt.title">Receipt</span> #1042</p>
+            <p class="receipt__line" data-step><span data-i18n="receipt.i1">Sneakers, 42</span><span>79.00</span></p>
+            <p class="receipt__line" data-step><span data-i18n="receipt.i2">Socks</span><span>7.40</span></p>
+            <p class="receipt__line receipt__line--total" data-step><span data-i18n="receipt.total">Total</span><span>86.40 AZN</span></p>
+            <p class="receipt__ok" data-step data-i18n="receipt.ok">Removed from stock, added to reports</p>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Reports -->
+        <article class="cell" data-module="reports">
+          <div class="cell__text">
+            <h3 data-i18n="mod.reports">Reports</h3>
+            <p data-i18n="cell.reports">Daily, monthly and yearly reports are prepared automatically.</p>
+          </div>
+          <div class="viz report" aria-hidden="true">
+            <div class="report__top"><span data-i18n="report.label">Revenue, October</span><b>+18%</b></div>
+            <svg class="report__chart" viewBox="0 0 240 90" preserveAspectRatio="none">
+              <path class="report__grid" d="M0 22.5H240M0 45H240M0 67.5H240"/>
+              <path class="report__area" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12 V90 H0Z"/>
+              <path class="report__line" pathLength="1" d="M0 78 L30 70 L60 74 L90 56 L120 60 L150 40 L180 44 L210 22 L240 12"/>
+            </svg>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- ERP -->
+        <article class="cell" data-module="erp">
+          <div class="cell__text">
+            <h3 data-i18n="mod.erp">ERP</h3>
+            <p data-i18n="cell.erp">Finance, HR, sales and inventory in one database. Every department sees the same numbers.</p>
+          </div>
+          <div class="viz erp" aria-hidden="true">
+            <svg class="erp__links" viewBox="0 0 240 120" preserveAspectRatio="none">
+              <path d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
+              <path class="flow" d="M60 30 L120 60 M180 30 L120 60 M60 90 L120 60 M180 90 L120 60"/>
+            </svg>
+            <span class="erp__node" style="--x:25%;--y:25%" data-i18n="erp.n1">Finance</span>
+            <span class="erp__node" style="--x:75%;--y:25%" data-i18n="erp.n2">HR</span>
+            <span class="erp__node" style="--x:25%;--y:75%" data-i18n="erp.n3">Sales</span>
+            <span class="erp__node" style="--x:75%;--y:75%" data-i18n="erp.n4">Inventory</span>
+            <span class="erp__core">DB</span>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Website -->
+        <article class="cell" data-module="web">
+          <div class="cell__text">
+            <h3 data-i18n="mod.web">Website</h3>
+            <p data-i18n="cell.web">Company sites and online stores. Fast on phones, easy to find on Google.</p>
+          </div>
+          <div class="viz browser" aria-hidden="true">
+            <div class="browser__bar"><i></i><i></i><i></i><span>sizinbiznes.az</span></div>
+            <div class="browser__body">
+              <div class="browser__lines"><b></b><b></b><b></b></div>
+              <div class="score"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9"/><circle class="score__arc" cx="18" cy="18" r="15.9" pathLength="100"/></svg><span>100</span></div>
+            </div>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Data -->
+        <article class="cell" data-module="data">
+          <div class="cell__text">
+            <h3 data-i18n="mod.data">Data analytics</h3>
+            <p data-i18n="cell.data">See in numbers which branch and which product earns the most.</p>
+          </div>
+          <div class="viz bars" aria-hidden="true">
+            <div class="bars__row"><span data-i18n="data.b1">Narimanov</span><i style="--w:92%"></i></div>
+            <div class="bars__row"><span data-i18n="data.b2">Yasamal</span><i style="--w:64%"></i></div>
+            <div class="bars__row"><span data-i18n="data.b3">Khatai</span><i style="--w:41%"></i></div>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+
+        <!-- Apps -->
+        <article class="cell" data-module="apps">
+          <div class="cell__text">
+            <h3 data-i18n="mod.apps">Apps</h3>
+            <p data-i18n="cell.apps">Android and iOS: ordering for your customers, work apps for your staff.</p>
+          </div>
+          <div class="viz phone" data-seq="1200" aria-hidden="true">
+            <p class="phone__title"><span data-i18n="app.order">Order</span> #1042</p>
+            <p class="phone__step" data-step data-i18n="app.s1">Confirmed</p>
+            <p class="phone__step" data-step data-i18n="app.s2">Preparing</p>
+            <p class="phone__step" data-step data-i18n="app.s3">On the way</p>
+          </div>
+          <button type="button" class="pick" aria-pressed="false"><span class="pick__on" data-i18n="pick.on">In your system</span><span class="pick__off" data-i18n="pick.off">Add to system</span></button>
+        </article>
+      </div>
+
+      <div class="picked">
+        <p id="pickedCount" aria-live="polite"></p>
+        <a href="#contact" class="btn btn--dark btn--sm" data-i18n="picked.cta">Request this system</a>
+      </div>
+    </section>
+
+    <!-- ===== SYSTEM ===== -->
+    <section class="section" id="system">
+      <div class="section__head">
+        <h2 data-i18n="system.title">One sale, four places.</h2>
+        <p data-i18n="system.text">The modules are not separate programs, they are one system. A sale at the till leaves inventory, lands in reports, and a summary reaches your phone in the evening. Nobody copies anything by hand.</p>
+      </div>
+      <div class="flow-wrap" aria-hidden="true">
+        <div class="pipeline">
+          <svg class="pipeline__wires" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <path d="M12.5 5H87.5"/>
+            <path class="flow" d="M12.5 5H87.5"/>
+          </svg>
+          <div class="pipeline__node"><i>01</i><span data-i18n="system.n1">Till</span></div>
+          <div class="pipeline__node"><i>02</i><span data-i18n="system.n2">Inventory</span></div>
+          <div class="pipeline__node"><i>03</i><span data-i18n="system.n3">Reports</span></div>
+          <div class="pipeline__node"><i>04</i><span data-i18n="system.n4">Your phone</span></div>
+        </div>
+        <div class="log">
+          <div class="log__bar"><span data-i18n="system.log">System log</span><i class="log__live" data-i18n="system.live">live</i></div>
+          <ol class="log__lines" id="logLines"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="section" id="process">
+      <div class="section__head">
+        <h2 data-i18n="process.title">How we work</h2>
+        <p data-i18n="process.text">The first two steps are free. You decide after you have seen the system and like it.</p>
+      </div>
+      <ol class="steps">
+        <li class="step step--free">
+          <span class="step__num">01</span>
+          <h3 data-i18n="process.s1.t">Introduction</h3>
+          <p data-i18n="process.s1.d">We learn about your business and how you work today. A meeting or call of about 30 minutes.</p>
+          <span class="step__tag" data-i18n="process.free">Free</span>
+        </li>
+        <li class="step step--free">
+          <span class="step__num">02</span>
+          <h3 data-i18n="process.s2.t">Free demo</h3>
+          <p data-i18n="process.s2.d">We set the system up with your own products and numbers and show it live. You try before you buy.</p>
+          <span class="step__tag" data-i18n="process.free">Free</span>
+        </li>
+        <li class="step">
+          <span class="step__num">03</span>
+          <h3 data-i18n="process.s3.t">Build</h3>
+          <p data-i18n="process.s3.d">We agree on timeline and price, then build the system in stages and show you each one.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">04</span>
+          <h3 data-i18n="process.s4.t">Handover and support</h3>
+          <p data-i18n="process.s4.d">We train your team. Support and updates continue after handover.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq" id="faq">
+      <div class="faq__intro">
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+        <p><span data-i18n="faq.text">If your question is not here,</span> <a href="#" class="js-wa-link" data-i18n="faq.link">message us on WhatsApp</a>.</p>
+      </div>
+      <div class="faq__list">
+        <details><summary data-i18n="faq.q1">Can I order services separately?</summary><p data-i18n="faq.a1">Yes. Each module works independently. Anything you add later connects to your existing system.</p></details>
+        <details><summary data-i18n="faq.q2">How does the free demo work?</summary><p data-i18n="faq.a2">We build a sample system for your business and show it live. No payment and no obligation: if you don’t like it, you owe nothing.</p></details>
+        <details><summary data-i18n="faq.q3">How long does a project take?</summary><p data-i18n="faq.a3">A simple website takes 1–2 weeks; ERP and management systems take 1–3 months depending on scope.</p></details>
+        <details><summary data-i18n="faq.q4">How is the price set?</summary><p data-i18n="faq.a4">The price depends on the modules you choose and the scope of features. We send an exact quote after the introduction.</p></details>
+        <details><summary data-i18n="faq.q5">Will it work with the software we use now?</summary><p data-i18n="faq.a5">In most cases, yes. We look at integration options with your current software together.</p></details>
+        <details><summary data-i18n="faq.q6">Is our data protected?</summary><p data-i18n="faq.a6">Yes. Data is kept on secured servers with regular backups. You decide what each employee can see.</p></details>
+        <details><summary data-i18n="faq.q7">Do you offer support after handover?</summary><p data-i18n="faq.a7">Yes. We provide technical support after handover and update the system when needed.</p></details>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <div class="contact__info">
+        <h2 data-i18n="contact.title">Try your system before you buy.</h2>
+        <p data-i18n="contact.text">Fill in the form: your request opens in WhatsApp as a ready message, and you just press send.</p>
+        <dl class="contact__list">
+          <div><dt data-i18n="contact.phone">Phone</dt><dd><a href="#" class="js-phone">+994 50 824 14 00</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/nevotech.az" target="_blank" rel="noopener" class="js-instagram">@nevotech.az</a></dd></div>
+          <div><dt data-i18n="contact.addressLabel">Address</dt><dd><a href="#" target="_blank" rel="noopener" class="js-map" data-i18n="contact.address">Aynalı Plaza, E. Rajabli St., Narimanov district, Baku</a></dd></div>
+        </dl>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="form__row">
+          <label class="field">
+            <span data-i18n="form.name">Your name</span>
+            <input type="text" name="name" autocomplete="name" required data-i18n-ph="form.namePh" placeholder="Məsələn, Elvin">
+          </label>
+          <label class="field">
+            <span data-i18n="form.phone">Phone</span>
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="+994 50 000 00 00">
+          </label>
+        </div>
+        <fieldset class="field">
+          <legend data-i18n="form.modules">Which modules do you need?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="modules" value="ai"><span data-i18n="mod.ai">AI chatbot</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="stock"><span data-i18n="mod.stock">Inventory</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="sales"><span data-i18n="mod.sales">Sales</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="reports"><span data-i18n="mod.reports">Reports</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="erp"><span data-i18n="mod.erp">ERP</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="web"><span data-i18n="mod.web">Website</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="data"><span data-i18n="mod.data">Data analytics</span></label>
+            <label class="chip"><input type="checkbox" name="modules" value="apps"><span data-i18n="mod.apps">Apps</span></label>
+          </div>
+          <p class="field__hint" data-i18n="form.modulesHint">Not sure? Leave it empty and we’ll choose together.</p>
+        </fieldset>
+        <label class="field">
+          <span data-i18n="form.message">Short description</span>
+          <textarea name="message" rows="3" data-i18n-ph="form.messagePh" placeholder="Biznesiniz və ehtiyacınız haqqında bir-iki cümlə"></textarea>
+        </label>
+        <p class="form__error" id="formError" role="alert" hidden data-i18n="form.error">Enter your name and phone number.</p>
+        <button type="submit" class="btn btn--light btn--block">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+          <span data-i18n="form.submit">Send on WhatsApp</span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer frame">
+    <div class="footer__brand">
+      <a href="#home" class="logo" aria-label="NevoTech"><svg class="logo__mark" viewBox="0 0 2000 2000" aria-hidden="true"><circle cx="1000" cy="1000" r="1000"/><path d="M621.5 600V1400M621.5 600L801.5 850M1378.5 600V1400M1378.5 1400L1198.5 1150"/><circle class="dot" cx="1000" cy="1000" r="76.5"/></svg><span>NevoTech</span></a>
+      <p data-i18n="footer.text">Software systems for your business.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="#modules" data-i18n="nav.modules">Modules</a>
+      <a href="#system" data-i18n="nav.system">How it works</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <p class="footer__copy">© <span id="year"></span> NevoTech. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="wa-float js-wa-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path d="M8.5 8.5c.5 2.5 2.5 5 5.5 6l1.3-1.3 2 1-.6 1.8c-4 .3-8.7-4.3-8.4-8.4l1.8-.6 1 2z"/></svg>
+  </a>
+
+  <script src="../js/config.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
